@@ -2,43 +2,43 @@
 using namespace std;
 int main()
 {
-    int Nilai[20];
-    int Posisi[20];
-    int i, N, Bilangan, Banyak = 0;
+    int nilai[20];
+    int posisi[20];
+    int i, n, bilangan, banyak = 0;
     bool ketemu;
-    cout << "Masukan Banyaknya Bilangan = ";
-    cin >> N;
+    cout << "Masukan banyaknya bilangan = ";
+    cin >> n;
     cout << endl;
     // Membaca elemen Array
-    for (i = 0; i < N; i++)
+    for (i = 0; i < n; i++)
     {
         cout << "Masukan elemen ke-" << i << " = ";
-        cin >> Nilai[i];
+        cin >> nilai[i];
     }
     // Membaca Elemen Array
-    cout << "\n\nDeretan Bilangan = ";
-    for (i = 0; i < N; i++)
-        cout << Nilai[i] << " ";
-    cout << "\n\nMasukan Bilangan yang akan dicabut = ";
-    cin >> Bilangan;
+    cout << "\n\nDeretan bilangan = ";
+    for (i = 0; i < n; i++)
+        cout << nilai[i] << " ";
+    cout << "\n\nMasukan bilangan yang akan dicabut = ";
+    cin >> bilangan;
     // melakukan pencarian
-    for (i = 0; i < N; i++)
+    for (i = 0; i < n; i++)
     {
-        if (Nilai[i] == Bilangan)
+        if (nilai[i] == bilangan)
         {
             ketemu = true;
-            Posisi[Banyak] = i;
-            Banyak++;
+            posisi[banyak] = i;
+            banyak++;
         }
     }
     if (ketemu)
     {
-        cout << "Bilangan " << Bilangan << " ditentukan sebanyak " << Banyak;
+        cout << "Bilangan " << bilangan << " ditentukan sebanyak " << banyak;
         cout << "\npada posisi ke = ";
-        for (i = 0; i < Banyak; i++)
-            cout << Posisi[i] << " ";
+        for (i = 0; i < banyak; i++)
+            cout << posisi[i] << " ";
     }
     else
-        cout << "Bilangan " << Bilangan << "tidak ditemukan";
+        cout << "Bilangan " << bilangan << "tidak ditemukan";
     cout<<"\n";
 }

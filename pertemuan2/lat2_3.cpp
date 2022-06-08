@@ -2,24 +2,24 @@
 using namespace std;
 int main()
 {
-    int Nilai[20];
-    int i, N, Terbesar;
-    cout << "Masukan Banyaknya Bilangan = ";
-    cin >> N;
+    int nilai[20];
+    int i, n, terbesar;
+    cout << "Masukan banyaknya bilangan = ";
+    cin >> n;
     cout << endl;
     // Membaca elemen array
-    for (i = 0; i < N; i++)
+    for (i = 0; i < n; i++)
     {
         cout << "Masukan elemen ke-" << i << "=";
-        cin >> Nilai[i];
+        cin >> nilai[i];
     }
-    Terbesar = Nilai[1]; // elemen pertama dibuat sebagai Terbesar
-    for (i = 1; i < N; i++)
+    terbesar = nilai[1]; // elemen pertama dibuat sebagai terbesar
+    for (i = 1; i < n; i++)
     {
-        if (Nilai[i] > Terbesar)
-            Terbesar = Nilai[i];
+        if (nilai[i] > terbesar)
+            terbesar = nilai[i];
     }
-    // Mencetak Bilangan Terbesar
-    cout << "\nBilangan Terbesar = " << Terbesar;
+    // Mencetak Bilangan terbesar
+    cout << "\nBilangan terbesar = " << terbesar;
     cout << "\n";
 }
