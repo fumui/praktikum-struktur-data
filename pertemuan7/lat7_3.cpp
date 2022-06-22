@@ -2,49 +2,41 @@
 #include <iomanip>
 using namespace std;
 
-void cetak(int data[], int n)
-{
+void cetak(int data[], int n) {
     int i;
     for (i = 0; i < n; i++)
         cout << setw(3) << data[i];
     cout << "\n";
 }
 
-int partisi(int data[], int low, int high)
-{
-    int pivot, i, j, temp;
-    pivot = data[low];
-    i = high+1;
-    cout << "low: " << low << endl;
-    cout << "high: " << high << endl;
-    for (j = high; j > low; j--){
-        if (data[j] > pivot) {
-            i--;
+int partisi(int data[], int p, int r) {
+    int x, i, j, temp;
+    x = data[p];
+    i = p;
+    j = r;
+    while (1) {
+        while (data[j] > x)
+            j--;
+        while (data[i] < x)
+            i++;
+        if (i < j) {
             temp = data[i];
             data[i] = data[j];
             data[j] = temp;
-            cetak(data, 10);
-        }
+        } else
+            return j;
     }
-    temp = data[i];
-    data[i] = data[low];
-    data[low] = temp;
-    cetak(data, 10);
-    cout << "i: " << i << endl;
-    cout << "j: " << j << endl;
-    return i;
 }
-void quickSort(int data[], int start, int end)
-{
+
+void quickSort(int data[], int p, int r) {
     int q;
-    if (start < end) {
-        q = partisi(data, start, end);
-        quickSort(data, start, q);
-        quickSort(data, q + 1, end);
+    if (q < r) {
+        q = partisi(data, p, r);
+        quickSort(data, p, q);
+        quickSort(data, q + 1, r);
     }
 }
-int main()
-{
+int main() {
     int nilai[20];
     int i, n;
     cout << "Masukan Banyak Bilangan : ";
